@@ -1,6 +1,10 @@
 ;; Use eclim
 (prelude-require-packages '(emacs-eclim))
 
+(require 'eclim)
+(require 'eclimd)
+(require 'eclim-completion)
+
 (setq eclim-auto-save t
       eclim-executable (expand-file-name "~/eclipse/eclim"))
 (global-eclim-mode)
