@@ -35,3 +35,9 @@
 ;; Only auto-complete when I request it using M-/
 (setq ac-auto-start nil)
 (global-set-key "\M-/" 'auto-complete)
+
+;; =============================================================================
+;; Python support with elpy
+;;
+(prelude-require-packages '(elpy))
+(elpy-enable)
