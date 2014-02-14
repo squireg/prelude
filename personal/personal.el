@@ -41,3 +41,8 @@
 ;;
 (prelude-require-packages '(elpy))
 (elpy-enable)
+
+;; =============================================================================
+;; SPARQL mode
+;;
+(prelude-require-packages '(sparql-mode))
