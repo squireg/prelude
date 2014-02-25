@@ -46,3 +46,16 @@
 ;; SPARQL mode
 ;;
 (prelude-require-packages '(sparql-mode))
+
+;; =============================================================================
+;; Web mode
+;;
+(add-hook 'web-mode-hook (lambda ()
+                           (local-set-key (kbd "C-c /") 'web-mode-element-close)))
+
+
+(define-key prelude-mode-map (kbd "s-g") nil)
+(define-key prelude-mode-map (kbd "s-g m") 'magit-status)
+(define-key prelude-mode-map (kbd "s-g l") 'magit-log)
+(define-key prelude-mode-map (kbd "s-g f") 'magit-file-log)
+(define-key prelude-mode-map (kbd "s-g b") 'magit-blame-mode)
