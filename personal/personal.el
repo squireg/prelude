@@ -24,20 +24,28 @@
 ;; DO NOT clean up whitespace on save!
 (setq prelude-clean-whitespace-on-save nil)
 
+;; ;; =============================================================================
+;; ;; auto-complete with eclim support
+;; ;;
+;; ;; regular auto-complete initialization
+;; (require 'auto-complete-config)
+;; (ac-config-default)
+
+;; ;; add the emacs-eclim source
+;; (require 'ac-emacs-eclim-source)
+;; (ac-emacs-eclim-config)
+
+;; ;; Only auto-complete when I request it using M-/
+;; (setq ac-auto-start nil)
+;; (global-set-key "\M-/" 'auto-complete)
+
 ;; =============================================================================
-;; auto-complete with eclim support
+;; User company-mode for auto completion, including eclim support
 ;;
-;; regular auto-complete initialization
-(require 'auto-complete-config)
-(ac-config-default)
-
-;; add the emacs-eclim source
-(require 'ac-emacs-eclim-source)
-(ac-emacs-eclim-config)
-
-;; Only auto-complete when I request it using M-/
-(setq ac-auto-start nil)
-(global-set-key "\M-/" 'auto-complete)
+(require 'company)
+(require 'company-emacs-eclim)
+(company-emacs-eclim-setup)
+(global-company-mode t)
 
 ;; =============================================================================
 ;; Python support with elpy
@@ -55,6 +63,17 @@
 ;;
 (add-hook 'web-mode-hook (lambda ()
                            (local-set-key (kbd "C-c /") 'web-mode-element-close)))
+
+;; =============================================================================
+;; Twitter!
+;;
+(prelude-require-packages '(twittering-mode))
+
+
+;; =============================================================================
+;; Projectile
+;;
+(setq projectile-switch-project-action 'projectile-dired)
 
 
 (define-key prelude-mode-map (kbd "s-g") nil)
