@@ -4,7 +4,8 @@
 ;; Note compliation-scroll-output set here!
 ;;
 (prelude-require-packages '(auto-complete
-                            emacs-eclim))
+                            emacs-eclim
+                            multiple-cursors))
 
 (require 'eclim)
 (require 'eclimd)
@@ -75,7 +76,10 @@
 ;;
 (setq projectile-switch-project-action 'projectile-dired)
 
-
+;; =============================================================================
+;; Magit stuff
+;;
+(setq magit-last-seen-setup-instructions "1.4.0")
 (define-key prelude-mode-map (kbd "s-g") nil)
 (define-key prelude-mode-map (kbd "s-g m") 'magit-status)
 (define-key prelude-mode-map (kbd "s-g l") 'magit-log)
