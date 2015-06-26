@@ -62,6 +62,7 @@
 ;; =============================================================================
 ;; Web mode
 ;;
+(setq web-mode-markup-indent-offset 2)
 (add-hook 'web-mode-hook (lambda ()
                            (local-set-key (kbd "C-c /") 'web-mode-element-close)))
 
