@@ -48,11 +48,11 @@
 (company-emacs-eclim-setup)
 (global-company-mode t)
 
-;; =============================================================================
-;; Python support with elpy
-;;
-(prelude-require-packages '(elpy))
-(elpy-enable)
+;; ;; =============================================================================
+;; ;; Python support with elpy
+;; ;;
+;; (prelude-require-packages '(elpy))
+;; (elpy-enable)
 
 ;; =============================================================================
 ;; SPARQL mode
@@ -80,9 +80,22 @@
 ;; =============================================================================
 ;; Magit stuff
 ;;
-(setq magit-last-seen-setup-instructions "1.4.0")
 (define-key prelude-mode-map (kbd "s-g") nil)
 (define-key prelude-mode-map (kbd "s-g m") 'magit-status)
 (define-key prelude-mode-map (kbd "s-g l") 'magit-log)
 (define-key prelude-mode-map (kbd "s-g f") 'magit-file-log)
 (define-key prelude-mode-map (kbd "s-g b") 'magit-blame-mode)
+
+;; =============================================================================
+;; org mode
+;;
+(setq org-catch-invisible-edits 'smart)
+
+;; =============================================================================
+;; tramp setup
+;;
+(setq tramp-default-proxies-alist
+      '(("tango.it.csiro.au" "root" "/ssh:squ022@tango.it.csiro.au:")
+        ("eric-cdc.it.csiro.au" "root" "/ssh:squ022@eric-cdc.it.csiro.au:")
+        ("10.0.0.109" "root" "/ssh:ggs599@cloudlogin.nci.org.au:")
+        ("10.0.0.159" "root" "/ssh:ggs599@cloudlogin.nci.org.au:")))

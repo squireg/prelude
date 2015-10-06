@@ -2,6 +2,7 @@
 
 (require 'prelude-ido) ;; Super charges Emacs completion for C-x C-f and more
 (require 'prelude-helm) ;; Interface for narrowing and search
+(require 'prelude-helm-everywhere)
 
 (require 'prelude-c)
 (require 'prelude-clojure)
